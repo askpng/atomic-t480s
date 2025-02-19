@@ -1,43 +1,110 @@
-# BlueBuild Template &nbsp; [![bluebuild build badge](https://github.com/blue-build/template/actions/workflows/build.yml/badge.svg)](https://github.com/blue-build/template/actions/workflows/build.yml)
+# atomic-t480s
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+A collection of Atomic Fedora images loaded with utilities for Lenovo T480/s functionality. These images are suitable for daily operations.
 
-After setup, it is recommended you update this README to describe your custom image.
+Images are built every Tuesday, Thursday, and Friday at 08:00 UTC.
 
-## Installation
+## Highlights
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+- All images are based on Fedora's official `:latest` images, so the image will also follow Atomic Fedora's `:latest` versions. I do not plan to maintain multiple versions, such as `n-1` or `:rawhide`. Be aware that builds may fail right after the major version bump, in which case I will monitor them and take measures as I see fit (e.g. replace COPRs with actively maintained versions).
+- Multimedia codecs, intel-vaapi-driver & MESA packages from RPMFusion & fedora-multimedia, eliminating the need to manually layer codecs
+- `btrfs-assistant` installed for snapshots & BTRFS maintenance
+- `distrobox` installed for a better container experience
+- `fish` and `zsh` shells installed natively, ready for use
+- Lenovo T480/s utilities integrated in the image - `python-validity` for fingerprint sensors, `throttled` for undervolting, `TLP` for power management, and `zcfan` for hassle-free fan-control
+- Qogir & Tela default icons installed at the system level
+- IBM Plex Sans & Mono, Ubuntu Sans & Mono installed from Google Fonts at the system level
 
-To rebase an existing atomic Fedora installation to the latest build:
+### Enabling T480s features
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
+All images are equipped with a command to automate set-up of all services - `python-validity`, `TLP`, and `zcfan`. `throttled` automation is NOT included, as it requires the user's own testing and adjustments.
+
+To automatically configure these utilities, run `cheat setup-t480s`, which configures the following in order:
+
+1. Apply `thinkpad_acpi.fan_control=1` kernel arguments for `zcfan` as well as `sysrq_always_enabled=1` for safety
+2. Enables local `initramfs` regeneration
+3. Enables fingerprint sensor drivers
+4. Installs TLP-UI Flatpak
+
+Reboot must be done before the features can work as expected.
+
+## Silverblue
+
+Silverblue images are equipepd with a lineup of default GNOME apps as system Flatpaks. I've also equipped it with the following convenient and useful extensions automatically enabled:
+
+- Alphabetical App Grid
+- AppIndicator and KStatusNotifierItem Support
+- Bluetooth Battery Meter
+- Caffeine
+- Just Perfection
+- Night Theme Switcher
+
+In addition, [nautilus-copy-path](https://github.com/chr314/nautilus-copy-path) is also installed by default at a system level.
+
+Minor `gschemas` changes have also been made, which affects:
+
+- favorite apps
+- default background image
+- accent color & default fonts (set to Ubuntu Sans 10.5 - it's *very* pretty, pleasant, and performant!)
+- set Mutter to wait 30s before an app is considered not responding
+- Nautilus set to show link options & permanent file deletion
+
+### Silverblue: Installation
+
+You can rebase from an existing Silverblue installation and running the commands below.
+
+> Remember to reset all of your layered packages before proceeding!
+
+1. Rebase to the unsigned version of the image.
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/askpng/silverblue:latest
   ```
-- Reboot to complete the rebase:
+2. Reboot your system.
   ```
   systemctl reboot
   ```
-- Then rebase to the signed image, like so:
+3. Rebase to the signed version of the image.
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/blue-build/template:latest
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/askpng/silverblue:latest
   ```
-- Reboot again to complete the installation
+4. Reboot your system.
   ```
   systemctl reboot
   ```
 
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+## Kinoite
 
-## ISO
+Kinoite users get a fairly default KDE experience - mainly because I do not have much experience and interest in tinkering with KDE. However, I have made sure to include [Koi](https://github.com/baduhai/Koi) and [Kvantum](https://github.com/tsujan/Kvantum/) for your convenience! 
 
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
+KDE essentials are also installed as system Flatpaks. 
+
+### Kunoite: Installation
+
+You can rebase from an existing Kinoite installation and running the commands below.
+
+> Remember to reset all of your layered packages before proceeding!
+
+1. Rebase to the unsigned version of the image.
+  ```
+  rpm-ostree rebase ostree-unverified-registry:ghcr.io/askpng/kinoite:latest
+  ```
+2. Reboot your system.
+  ```
+  systemctl reboot
+  ```
+3. Rebase to the signed version of the image.
+  ```
+  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/askpng/kinoite:latest
+  ```
+4. Reboot your system.
+  ```
+  systemctl reboot
+  ```
 
 ## Verification
 
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-cosign verify --key cosign.pub ghcr.io/blue-build/template
+cosign verify --key cosign.pub ghcr.io/askpng/atomic-t480s
 ```

@@ -6,3 +6,5 @@ modules:
     install:
       - Koi
       - kvantum
+    remove:
+      - kwrite

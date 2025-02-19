@@ -1,0 +1,8 @@
+modules:
+  - type: default-flatpaks
+    notify: true
+    system:
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      install:
+        - com.github.tchx84.Flatseal
+        - io.github.flattool.Warehouse

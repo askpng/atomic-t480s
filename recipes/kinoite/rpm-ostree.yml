@@ -1,0 +1,8 @@
+modules:
+  - type: rpm-ostree
+    repos:
+      # Koi
+      - https://copr.fedorainfracloud.org/coprs/birkch/Koi/repo/fedora-%OS_VERSION%/birkch-Koi-fedora-%OS_VERSION%.repo
+    install:
+      - Koi
+      - kvantum

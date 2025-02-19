@@ -30,7 +30,16 @@ Reboot must be done before the features can work as expected.
 
 ## Silverblue
 
-Silverblue images are equipepd with a lineup of default GNOME apps as system Flatpaks. I've also equipped it with the following convenient and useful extensions automatically enabled:
+| preview 	| preview 	|
+|---	|---	|
+| ![Silverblue login screen](./screenshots/silverblue/login.png) 	| ![Silverblue desktop](./screenshots/silverblue/desktop.png) 	|
+| GDM 	| Desktop 	|
+| ![T480s setup](./screenshots/silverblue/setup-t480s-terminal.png) 	| ![Silverblue app drawer](./screenshots/silverblue/app-drawer.png) 	|
+| The terminal after running `cheat setup-t480s` 	| Preconfigured app drawer, after Flatpaks are successfully installed 	|
+
+ Silverblue images are equpped with a lineup of default GNOME apps as system Flatpaks. In addition, I have also made minor changes to the GNOME environment to improve user experience.
+ 
+As a user who enjoys GNOME's way of things, who also recognizes that there are minor but impactful improvements that can be made to the GNOME environment, I've decided to equip it with the following convenient and useful extensions automatically enabled:
 
 - Alphabetical App Grid
 - AppIndicator and KStatusNotifierItem Support
@@ -39,13 +48,15 @@ Silverblue images are equipepd with a lineup of default GNOME apps as system Fla
 - Just Perfection
 - Night Theme Switcher
 
+From my humble perspective, these extensions do not modify the essence of the GNOME way, but rather enhance it, and so I have decided to bring them to you too.
+
 In addition, [nautilus-copy-path](https://github.com/chr314/nautilus-copy-path) is also installed by default at a system level.
 
 Minor `gschemas` changes have also been made, which affects:
 
 - favorite apps
 - default background image
-- accent color & default fonts (set to Ubuntu Sans 10.5 - it's *very* pretty, pleasant, and performant!)
+- accent color set to purple & default fonts (set to Ubuntu Sans 10.5 - it's *very* pretty, pleasant, and performant!)
 - set Mutter to wait 30s before an app is considered not responding
 - Nautilus set to show link options & permanent file deletion
 

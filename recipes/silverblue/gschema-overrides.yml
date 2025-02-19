@@ -1,6 +1,7 @@
 modules:
   - type: gschema-overrides
     include:
+    - zz00-org-gnome-settings-daemon-plugins-power.gschema.override
     - zz01-org-gnome-shell-extensions.gschema.override
     - zz02-org-gnome-desktop-background.gschema.override
     - zz03-org-gnome-desktop-interface.gschema.override

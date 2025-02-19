@@ -1,0 +1,10 @@
+modules:
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - NerdFontsSymbolsOnly
+      google-fonts:
+        - IBM Plex Sans
+        - IBM Plex Mono
+        - Ubuntu Sans
+        - Ubuntu Sans Mono

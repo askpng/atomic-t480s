@@ -1,0 +1,12 @@
+modules:
+  - type: gnome-extensions
+    install:
+      - Alphabetical App Grid
+      - AppIndicator and KStatusNotifierItem Support
+      - Bluetooth Battery Meter
+      - Caffeine
+      - Just Perfection
+      - Night Theme Switcher
+  - type: script
+    scripts:
+      - nautilus-copy-path.sh

@@ -16,15 +16,18 @@ image-version: latest
 modules:
   # installs negativo17 repo & replaces vanilla multimedia codecs
   - from-file: shared/bling.yml
-  # this includes everything except for image-specific modifications
-  # ---
+  # installs audio & codec packages, command line utilities including fish & zsh,
+  # GUI packages such as btrfs-assistant, and other useful stuff that doesn't get in the way
+  # removes natively installed firefox & vanilla free codecs
   - from-file: shared/rpm-ostree.yml
+  # installs Koi & kvantum  
   - from-file: kinoite/rpm-ostree.yml
   # this installs T480/s specific utilities:
   # fingerprint drivers, TLP, and throttled
-  # ---
-  - from-file: shared/t480s.yml
+  - from-file: shared/rpm-ostree-t480s.yml
+  # installs fonts & icons
+  - from-file: shared/fonts.yml
+  - from-file: shared/icons.yml
   # files module
-  # ---
   - from-file: shared/files.yml
   - type: signing

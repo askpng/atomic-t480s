@@ -2,7 +2,6 @@ modules:
   # installs negativo17 repo
   - type: bling
     install:
-      # - dconf-update-service
       - negativo17
   - type: script
     snippets:

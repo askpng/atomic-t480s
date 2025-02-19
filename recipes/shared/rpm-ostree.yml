@@ -51,13 +51,6 @@ modules:
     # repos are also removed because the image will not be used to layer things locally
     - fedora-bookmarks
     - fedora-chromium-config
-    - fedora-chromium-config-gnome
-    - fedora-flathub-remote
-    - fedora-repos-archive
-    - fedora-repos-ostree
-    - fedora-third-party
-    - fedora-workstation-repositories
-    - fedora-workstation-backgrounds
     # ---
     # multimedia codecs
     - fdk-aac-free
@@ -69,12 +62,9 @@ modules:
     - libavutil-free
     - libpostproc-free
     - libswresample-free
-    - libswscale-free 
-    - totem-video-thumbnailer   
+    - libswscale-free  
     # ---
     # others
     - default-fonts-cjk-sans
     - firefox
     - firefox-langpacks
-    - rygel
-    - yelp

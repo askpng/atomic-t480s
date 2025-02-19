@@ -16,15 +16,27 @@ image-version: latest
 modules:
   # installs negativo17 repo & replaces vanilla multimedia codecs
   - from-file: shared/bling.yml
-  # this includes everything except for image-specific modifications
-  # ---
+  # enables dconf-update-service
+  - type: bling
+    install:
+      - dconf-update-service
+  # installs audio & codec packages, command line utilities including fish & zsh,
+  # GUI packages such as btrfs-assistant, and other useful stuff that doesn't get in the way
+  # removes natively installed firefox & vanilla free codecs
   - from-file: shared/rpm-ostree.yml
+  # removes natively installed gnome extensions, gnome-software-rpm-ostree,
+  # installs Adw-gtk3-theme, gnome-tweaks, morewaita, and nautilus-extensions
   - from-file: silverblue/rpm-ostree.yml
   # this installs T480/s specific utilities:
   # fingerprint drivers, TLP, and throttled
-  # ---
-  - from-file: shared/t480s.yml
+  - from-file: shared/rpm-ostree-t480s.yml
+  # installs gnome extensions & nautilus-copy-path
+  - from-file: silverblue/gnome-extensions.yml
+  # installs gschema-overrides
+  - from-file: silverblue/gschema-overrides.yml
+  # installs fonts & icons
+  - from-file: shared/fonts.yml
+  - from-file: shared/icons.yml
   # files module
-  # ---
   - from-file: shared/files.yml
   - type: signing

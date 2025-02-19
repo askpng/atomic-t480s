@@ -1,0 +1,5 @@
+modules:
+  - type: script
+    scripts:
+      - qogir-icon-theme.sh
+      - tela-icon-theme.sh

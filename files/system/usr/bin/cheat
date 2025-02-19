@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+/usr/bin/just --justfile /usr/share/cheats/cheats.just "${@}"

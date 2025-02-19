@@ -1,0 +1,23 @@
+modules:
+  - type: rpm-ostree
+    repos:
+      # morewaita
+      - https://copr.fedorainfracloud.org/coprs/dusansimic/themes/repo/fedora-%OS_VERSION%/dusansimic-themes-fedora-%OS_VERSION%.repo
+    install:
+      # this module installs various packages, organized under categories below
+      # ---
+      - adw-gtk3-theme
+      - gnome-tweaks
+      - nautilus-extensions
+      - nautilus-python
+    remove:
+    # package removals
+    # gnome
+    - gnome-shell-extension-apps-menu
+    - gnome-shell-extension-background-logo
+    - gnome-shell-extension-launch-new-instance
+    - gnome-shell-extension-places-menu
+    - gnome-shell-extension-window-list
+    - gnome-software-rpm-ostree
+    - gnome-system-monitor
+    - gnome-tour

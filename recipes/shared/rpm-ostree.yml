@@ -1,0 +1,80 @@
+modules:
+  - type: rpm-ostree
+    install:
+      # this module installs various packages, organized under categories below
+      # ---
+      # audio & codecs
+      - alsa-firmware
+      - ffmpeg
+      - ffmpeg-libs
+      - ffmpegthumbnailer
+      - heif-pixbuf-loader
+      - intel-vaapi-driver
+      - libcamera
+      - libcamera-gstreamer
+      - libcamera-ipa
+      - libcamera-tools
+      - libva-utils
+      - pipewire-plugin-libcamera
+      - pulseaudio-utils
+      # CLI utilities
+      - distrobox
+      - fastfetch
+      - fish
+      - fzf
+      - go-task
+      - inxi
+      - just
+      - openssl
+      - symlinks
+      - tcpdump
+      - traceroute
+      - wireguard-tools
+      - wl-clipboard
+      - zsh
+      - zstd
+      # GUI
+      - btrfs-assistant
+      - firewall-config
+      # other system
+      - grub2-tools-extra
+      - gvfs-nfs
+      - hunspell
+      - hunspell-en
+      - libappindicator
+      - libratbag-ratbagd
+    remove:
+    # package removals
+    # this module removes redundant fedora packages, undesired gnome packages, multimedia packages that will be replaced with RPMFusion packages, etc
+    # ---
+    # fedora
+    # repos are also removed because the image will not be used to layer things locally
+    - fedora-bookmarks
+    - fedora-chromium-config
+    - fedora-chromium-config-gnome
+    - fedora-flathub-remote
+    - fedora-repos-archive
+    - fedora-repos-ostree
+    - fedora-third-party
+    - fedora-workstation-repositories
+    - fedora-workstation-backgrounds
+    # ---
+    # multimedia codecs
+    - fdk-aac-free
+    - ffmpeg-free
+    - libavcodec-free
+    - libavdevice-free
+    - libavfilter-free
+    - libavformat-free
+    - libavutil-free
+    - libpostproc-free
+    - libswresample-free
+    - libswscale-free 
+    - totem-video-thumbnailer   
+    # ---
+    # others
+    - default-fonts-cjk-sans
+    - firefox
+    - firefox-langpacks
+    - rygel
+    - yelp

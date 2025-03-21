@@ -5,18 +5,13 @@ modules:
       # ---
       # audio & codecs
       - alsa-firmware
-      - ffmpeg
-      - ffmpeg-libs
       - ffmpegthumbnailer
       - heif-pixbuf-loader
-      - intel-vaapi-driver
-      - libcamera
       - libcamera-gstreamer
-      - libcamera-ipa
       - libcamera-tools
       - libva-utils
-      - pipewire-plugin-libcamera
-      - pulseaudio-utils
+      - pipewire-plugin-vulkan
+      - vulkan-headers
       # CLI utilities
       - distrobox
       - fastfetch
@@ -51,18 +46,6 @@ modules:
     # repos are also removed because the image will not be used to layer things locally
     - fedora-bookmarks
     - fedora-chromium-config
-    # ---
-    # multimedia codecs
-    - fdk-aac-free
-    - ffmpeg-free
-    - libavcodec-free
-    - libavdevice-free
-    - libavfilter-free
-    - libavformat-free
-    - libavutil-free
-    - libpostproc-free
-    - libswresample-free
-    - libswscale-free  
     # ---
     # others
     - default-fonts-cjk-sans

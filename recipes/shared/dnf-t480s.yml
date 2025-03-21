@@ -1,0 +1,37 @@
+modules:
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    repos:
+      cleanup: true
+      copr:
+        - abn/throttled
+        - sneexy/python-validity
+    install:
+      allow-erasing: true
+      packages:
+      - igt-gpu-tools
+      # python-validity
+      - fprintd-clients
+      - fprintd-clients-pam
+      - open-fprintd
+      - python3-validity    
+      # tlp
+      - tlp
+      - tlp-rdw
+      # throttled
+      - throttled
+      # zcfan
+      - zcfan
+    remove:
+      auto-remove: true
+      packages:
+        - tuned
+        - tuned-ppd
+        
+  - type: systemd
+    system:
+      enabled:
+        - tlp.service
+      masked: 
+        - systemd-rfkill.service
+        - systemd-rfkill.socket

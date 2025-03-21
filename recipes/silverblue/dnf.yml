@@ -1,0 +1,33 @@
+modules:
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    repos:
+      cleanup: true
+      copr:
+        - dusansimic/themes
+    install:
+      packages:
+        # this module installs various packages, organized under categories below
+        # ---
+        - adw-gtk3-theme
+        - gnome-tweaks
+        - morewaita-icon-theme
+        - nautilus-extensions
+        - nautilus-python
+    remove:
+      packages:
+      # package removals
+      # gnome
+      - fedora-chromium-config-gnome
+      - gnome-classic-session
+      - gnome-shell-extension-apps-menu
+      - gnome-shell-extension-background-logo
+      - gnome-shell-extension-launch-new-instance
+      - gnome-shell-extension-places-menu
+      - gnome-shell-extension-window-list
+      - gnome-software-rpm-ostree
+      - gnome-system-monitor
+      - gnome-tour
+      - rygel
+      - totem-video-thumbnailer
+      - yelp

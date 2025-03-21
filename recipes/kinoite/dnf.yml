@@ -1,0 +1,12 @@
+modules:
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    repos:
+      cleanup: true
+      copr:
+        - birkch/Koi
+    install:
+      packages:
+        - Koi
+        - kvantum
+        - kwrite

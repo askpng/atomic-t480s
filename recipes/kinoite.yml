@@ -19,12 +19,12 @@ modules:
   # installs audio & codec packages, command line utilities including fish & zsh,
   # GUI packages such as btrfs-assistant, and other useful stuff that doesn't get in the way
   # removes natively installed firefox & vanilla free codecs
-  - from-file: shared/rpm-ostree.yml
+  - from-file: shared/dnf.yml
   # installs Koi & kvantum  
-  - from-file: kinoite/rpm-ostree.yml
+  - from-file: kinoite/dnf.yml
   # this installs T480/s specific utilities:
   # fingerprint drivers, TLP, and throttled
-  - from-file: shared/rpm-ostree-t480s.yml
+  - from-file: shared/dnf-t480s.yml
   # default-flatpaks
   - from-file: shared/default-flatpaks.yml
   # KDE flatpaks

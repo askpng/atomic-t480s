@@ -1,0 +1,56 @@
+modules:
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    install:
+      packages:
+        # this module installs various packages, organized under categories below
+        # ---
+        # audio & codecs
+        - alsa-firmware
+        - ffmpegthumbnailer
+        - heif-pixbuf-loader
+        - libcamera-gstreamer
+        - libcamera-tools
+        - libva-utils
+        - pipewire-plugin-vulkan
+        - vulkan-headers
+        # CLI utilities
+        - distrobox
+        - fastfetch
+        - fish
+        - fzf
+        - go-task
+        - inxi
+        - just
+        - openssl
+        - symlinks
+        - tcpdump
+        - traceroute
+        - wireguard-tools
+        - wl-clipboard
+        - zsh
+        - zstd
+        # GUI
+        - btrfs-assistant
+        - firewall-config
+        # other system
+        - grub2-tools-extra
+        - gvfs-nfs
+        - hunspell
+        - hunspell-en
+        - libappindicator
+        - libratbag-ratbagd
+    remove:
+      packages:
+      # package removals
+      # this module removes redundant fedora packages, undesired gnome packages, multimedia packages that will be replaced with RPMFusion packages, etc
+      # ---
+      # fedora
+      # repos are also removed because the image will not be used to layer things locally
+      - fedora-bookmarks
+      - fedora-chromium-config
+      # ---
+      # others
+      - default-fonts-cjk-sans
+      - firefox
+      - firefox-langpacks        

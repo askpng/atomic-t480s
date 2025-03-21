@@ -1,11 +1,38 @@
 modules:
-  # installs negativo17 repo
-  - type: bling
+  - type: dnf
+    source: ghcr.io/blue-build/modules/dnf:dnf-module
+    repos:
+      cleanup: true
+      nonfree: rpmfusion
+    remove:
+      packages:
+        - intel-media-driver
+        - libavdevice-free
+        - libavfilter-free
+        - libavformat-free
+        - libavutil-free
+        - libpostproc-free
+        - libswresample-free
+        - libswscale-free
+    replace:
+      - from-repo: rpmfusion
+        packages:
+        - old: ffmpeg-free
+          new: ffmpeg
+        - old: mesa-va-drivers
+          new: mesa-va-drivers-freeworld
+        - old: libavcodec
+          new: libavcodec-freeworld
     install:
-      - negativo17
-  - type: script
-    snippets:
-      # replaces mesa with negativo17 versions
-      - 'rpm-ostree override replace --experimental --from repo=fedora-multimedia libheif libva libva-intel-media-driver mesa-dri-drivers mesa-filesystem mesa-libEGL mesa-libGL mesa-libgbm mesa-libxatracker mesa-va-drivers mesa-vulkan-drivers'
-      # replaces OpenCL-ICD-Loeader with ocl-icd
-      - 'rpm-ostree override replace --from repo=fedora --experimental --remove=OpenCL-ICD-Loader ocl-icd || true'
+      install-weak-deps: false
+      packages:
+        - gstreamer1-plugin-libav
+        - gstreamer1-plugins-bad-free-extras
+        - gstreamer1-plugins-bad-freeworld
+        - gstreamer1-plugins-ugly
+        - gstreamer1-vaapi
+        - libheif-freeworld
+        - mesa-libxatracker        
+        - repo: rpmfusion-nonfree
+          packages:
+            - intel-media-driver

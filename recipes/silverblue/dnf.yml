@@ -10,7 +10,6 @@ modules:
         # this module installs various packages, organized under categories below
         # ---
         - adw-gtk3-theme
-        - gnome-tweaks
         - morewaita-icon-theme
         - nautilus-extensions
         - nautilus-python

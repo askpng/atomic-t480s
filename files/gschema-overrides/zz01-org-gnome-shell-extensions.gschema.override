@@ -1,9 +1,6 @@
 [org.gnome.shell]
 
-## user extensions ##
-
 disable-user-extensions=false
 enabled-extensions = ['AlphabeticalAppGrid@stuarthayhurst', 'appindicatorsupport@rgcjonas.gmail.com', 'nightthemeswitcher@romainvigier.fr', 'just-perfection-desktop@just-perfection', 'do-not-disturb-while-screen-sharing-or-recording@marcinjahn.com', 'Bluetooth-Battery-Meter@maniacx.github.com', 'caffeine@patapon.info']
 
-## pinned apps ##
 favorite-apps = ['zen-browser.desktop', 'com.spotify.Client.desktop', 'vesktop.desktop', 'io.github.celluloid_player.Celluloid.desktop', 'io.github.quodlibet.QuodLibet.desktop', 'org.gnome.Nautilus.desktop', 'io.github.nokse22.minitext.desktop', 'net.lutris.Lutris.desktop', 'codium.desktop']

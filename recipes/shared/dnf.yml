@@ -1,6 +1,5 @@
 modules:
   - type: dnf
-    source: ghcr.io/blue-build/modules/dnf:dnf-module
     install:
       packages:
         # this module installs various packages, organized under categories below

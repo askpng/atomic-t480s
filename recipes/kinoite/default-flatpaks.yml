@@ -1,9 +1,9 @@
 modules:
   - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      install:
+    configurations:
+      - notify: false
+        scope: system
+        install:
         - org.kde.gwenview
         - org.kde.haruna
         - org.kde.kate

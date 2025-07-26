@@ -1,16 +1,16 @@
 modules:
   - type: default-flatpaks
-    notify: true
-    system:
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      install:
-        - ca.desrt.dconf-editor
-        - com.mattjakeman.ExtensionManager
-        - net.nokyan.Resources
-        - org.gnome.clocks
-        - org.gnome.FileRoller
-        - org.gnome.Firmware
-        - org.gnome.Loupe
-        - org.gnome.seahorse.Application
-        - org.gnome.TextEditor
-        - page.tesk.Refine
+    configurations:
+      - notify: false
+        scope: system
+        install:
+          - ca.desrt.dconf-editor
+          - com.mattjakeman.ExtensionManager
+          - net.nokyan.Resources
+          - org.gnome.clocks
+          - org.gnome.FileRoller
+          - org.gnome.Firmware
+          - org.gnome.Loupe
+          - org.gnome.seahorse.Application
+          - org.gnome.TextEditor
+          - page.tesk.Refine

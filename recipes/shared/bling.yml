@@ -16,8 +16,6 @@ modules:
             new: libavcodec
           - old: libfdk-aac-free
             new: libfdk-aac
-          - old: intel-media-driver
-            new: libva-intel-media-driver
           - libva
           - mesa-dri-drivers
           - mesa-filesystem
@@ -26,3 +24,12 @@ modules:
           - mesa-libgbm
           - mesa-va-drivers
           - mesa-vulkan-drivers
+  - type: dnf
+    repos:
+      cleanup: true
+      nonfree: rpmfusion
+    replace:
+      - from-repo: rpmfusion
+        packages:
+        - old: libva-intel-media-driver
+          new: intel-media-driver

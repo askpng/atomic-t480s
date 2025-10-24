@@ -5,6 +5,8 @@ modules:
       copr:
         - birkch/Koi
     install:
+      install-weak-deps: true
+      allow-erasing: true
       packages:
         - Koi
         - kvantum

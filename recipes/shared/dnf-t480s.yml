@@ -6,6 +6,7 @@ modules:
         - abn/throttled
         - sneexy/python-validity
     install:
+      install-weak-deps: true
       allow-erasing: true
       packages:
       - igt-gpu-tools

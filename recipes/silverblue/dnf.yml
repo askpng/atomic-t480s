@@ -5,6 +5,8 @@ modules:
       copr:
         - dusansimic/themes
     install:
+      install-weak-deps: true
+      allow-erasing: true
       packages:
         # this module installs various packages, organized under categories below
         # ---

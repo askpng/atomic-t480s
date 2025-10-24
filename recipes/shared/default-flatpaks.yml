@@ -4,5 +4,6 @@ modules:
       - notify: false
         scope: system
         install:
+        - com.github.d4nj1.tlpui
         - com.github.tchx84.Flatseal
         - io.github.flattool.Warehouse

@@ -1,0 +1,6 @@
+modules:
+  - type: kargs
+    arch: x86_64
+    kargs:
+      - thinkpad_acpi.fan_control=1
+      - sysrq_always_enabled=1

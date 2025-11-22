@@ -28,7 +28,7 @@ modules:
   # default-flatpaks
   - from-file: shared/default-flatpaks.yml
   # KDE flatpaks
-  - from-file: silverblue/default-flatpaks.yml
+  - from-file: kinoite/default-flatpaks.yml
   # installs fonts & icons
   - from-file: shared/fonts.yml
   - from-file: shared/icons.yml

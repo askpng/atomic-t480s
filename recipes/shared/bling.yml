@@ -4,34 +4,36 @@ modules:
       cleanup: true
       nonfree: negativo17
     install:
-      install-weak-deps: true
       allow-erasing: true
+      install-weak-deps: false
       packages:
-        - gstreamer1-plugin-vaapi
-        - libheif
-        - mesa-va-drivers        
+        - ffmpeg-libs
+        - gstreamer1-plugins-bad
+        - gstreamer1-plugins-bad-fluidsynth
+        - gstreamer1-plugins-bad-opencv
+        - gstreamer1-plugins-ugly
+        - openh264
+        - libfreeaptx
+        - libva-utils
+        - mpv
+        - x264
+        - x265  
     replace:
       - from-repo: fedora-multimedia
         packages:
-          - old: ffmpeg-free
-            new: ffmpeg
-          - old: libavcodec-free
-            new: libavcodec
-          - old: libfdk-aac-free
+          # - old: ffmpeg-free
+          #   new: ffmpeg
+          - intel-gmmlib
+          # - old: libavcodec-free
+          #   new: libavcodec
+          - old: fdk-aac-free
             new: libfdk-aac
+          - libheif
           - libva
+          - libva-intel-media-driver
           - mesa-dri-drivers
           - mesa-filesystem
           - mesa-libEGL
           - mesa-libGL
           - mesa-libgbm
           - mesa-vulkan-drivers
-  - type: dnf
-    repos:
-      cleanup: true
-      nonfree: rpmfusion
-    replace:
-      - from-repo: rpmfusion-nonfree
-        packages:
-        - old: libva-intel-media-driver
-          new: intel-media-driver

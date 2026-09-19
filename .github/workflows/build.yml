@@ -49,7 +49,7 @@ jobs:
           sudo rm -f /mnt/swapfile || true    
       # the build is fully handled by the reusable github action
       - name: Build Custom Image
-        uses: blue-build/github-action@v1.12
+        uses: blue-build/github-action@v1.13
         with:
           recipe: ${{ matrix.recipe }}
           rechunk: true
